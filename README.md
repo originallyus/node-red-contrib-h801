@@ -1,5 +1,7 @@
 # node-red-contrib-h801
 
+![Usage screenshot](https://raw.githubusercontent.com/originallyus/node-red-contrib-h801/master/screenshot.png "Screenshot")
+
 This is a NodeRed node for controlling H801 RGBW LED Controller without modification to H801 firmware.
 
 

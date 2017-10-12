@@ -4,7 +4,14 @@
         color: '#C0C0C0',
         defaults: {
             name: {value:""},
-            mac: {value:"", required:true}
+            mac: {value:"", required:true},
+            broadcast: {value:""},
+            r: {value:"0"},
+            g: {value:"0"},
+            b: {value:"0"},
+            w1: {value:"0"},
+            w2: {value:"0"},
+            repeat: {value:"3"},
         },
         inputs:1,
         outputs:0,
@@ -22,8 +29,29 @@
     </div>
 
     <div class="form-row">
-        <label for="node-input-mac"><i class="icon-tag"></i> MAC Address</label>
-        <input type="text" id="node-input-mac" placeholder="AA:BB:CC:DD:EE:FF">
+        <label for="node-input-r"><i class="icon-tag"></i> Red</label>
+        <input type="number" id="node-input-r" placeholder="0-255">
+    </div>
+    <div class="form-row">
+        <label for="node-input-g"><i class="icon-tag"></i> Green</label>
+        <input type="number" id="node-input-g" placeholder="0-255">
+    </div>
+    <div class="form-row">
+        <label for="node-input-b"><i class="icon-tag"></i> Blue</label>
+        <input type="number" id="node-input-b" placeholder="0-255">
+    </div>
+    <div class="form-row">
+        <label for="node-input-w1"><i class="icon-tag"></i> W1</label>
+        <input type="number" id="node-input-w1" placeholder="0-255">
+    </div>
+    <div class="form-row">
+        <label for="node-input-w2"><i class="icon-tag"></i> W2</label>
+        <input type="number" id="node-input-w2" placeholder="0-255">
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-mac"><i class="icon-tag"></i> MAC</label>
+        <input type="text" id="node-input-mac" placeholder="18:FE:XX:XX:XX:XX">
     </div>
     <div class="form-tips">
         <p>
@@ -36,10 +64,76 @@
         <img src="https://raw.githubusercontent.com/originallyus/node-red-contrib-h801/master/screenshot_fing.jpg">
         </p>
     </div>
+    <p></p>
+
+    <div class="form-row">
+        <label for="node-input-broadcast"><i class="icon-tag"></i> Broadcast Address</label>
+        <input type="text" id="node-input-broadcast" placeholder="255.255.255.255">
+    </div>
+    <div class="form-tips">
+        <p>
+        <b>Optional</b>
+        </p>
+        <p>
+        This node uses UDP Broadcast traffic to reach your H801 Controller.
+        </p>
+        <p>
+        You may change this parameter if you have advanced network configuration with VLAN or firewalls preventing the default broadcast address (255.255.255.255) to work. If you don't know what this is, most likely you don't need to set it.
+        </p>
+    </div>
+    <p></p>
+
+    <div class="form-row">
+        <label for="node-input-repeat"><i class="icon-tag"></i> Repeat</label>
+        <input type="text" id="node-input-repeat" placeholder="3">
+    </div>
+    <div class="form-tips">
+        <p>
+        <b>Optional</b>
+        </p>
+        <p>
+        Repeat this command multiple times to workaround UDP Broadcast traffic unreliableness. 
+        </p>
+    </div>
 </script>
 
 <script type="text/x-red" data-help-name="h801">
     <p>
       This is a node for controlling H801 RGBW Controller in your flow.
     </p>
+
+    <h3>How to use</h3>
+    <ul> 
+      <li>Add this node to your flow</li>
+      <li>Give it a <b>MAC Address</b></li>
+      <li>Either enter RGBW values into the node or use input msg to control the colors</li>
+    </ul>
+
+    <p><a href="https://raw.githubusercontent.com/originallyus/node-red-contrib-h801/master/screenshot.png" target="_blank"><img src="https://raw.githubusercontent.com/originallyus/node-red-contrib-h801/master/screenshot.png"></a></p>
+
+    <p>
+        Developed by the super cool forks at <a href="http://originally.us" target="_blank"><b>Originally US</b></a>
+    <p/>
+
+    <h3>Inputs</h3>
+
+    <dl class="message-properties">
+        <dt>mac <span class="property-type">string | AA:BB:CC:DD:EE:FF</span></dt>
+        <dd> MAC Address of your H801 Controller.</dd>
+        <dt>r <span class="property-type">int | 0-255</span></dt>
+        <dd> red value</dd>
+        <dt>g <span class="property-type">int | 0-255</span></dt>
+        <dd> greeb value</dd>
+        <dt>b <span class="property-type">int | 0-255</span></dt>
+        <dd> blue value</dd>
+        <dt>w1 <span class="property-type">int | 0-255</span></dt>
+        <dd> W1 value</dd>
+        <dt>w2 <span class="property-type">int | 0-255</span></dt>
+        <dd> W2 value</dd>
+        <dt>broadcast <span class="property-type">string | 255.255.255.255</span></dt>
+        <dd> [Optional] broadcast address to be used</dd>
+        <dt>repeat <span class="property-type">string | 255.255.255.255</span></dt>
+        <dd> [Optional] Repeat this command multiple times to workaround UDP Broadcast traffic unreliableness.</dd>
+    </dl>
+
 </script>
