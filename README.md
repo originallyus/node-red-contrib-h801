@@ -7,7 +7,7 @@
 This is a NodeRed node for controlling H801 RGBW LED Controller without modification to H801 firmware.
 
 
-Developed by the super cool forks at [Originally US](http://originally.us) - a mobile app development company from Singapore
+Developed by the super cool folks at [Originally US](http://originally.us) - a mobile app development company from Singapore
 
 ## Installation
 
