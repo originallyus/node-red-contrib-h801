@@ -102,14 +102,14 @@
       This is a node for controlling H801 RGBW Controller in your flow.
     </p>
 
+    <p><a href="https://raw.githubusercontent.com/originallyus/node-red-contrib-h801/master/screenshot.png" target="_blank"><img src="https://raw.githubusercontent.com/originallyus/node-red-contrib-h801/master/screenshot.png"></a></p>
+
     <h3>How to use</h3>
     <ul> 
       <li>Add this node to your flow</li>
       <li>Give it a <b>MAC Address</b></li>
       <li>Either enter RGBW values into the node or use input msg to control the colors</li>
     </ul>
-
-    <p><a href="https://raw.githubusercontent.com/originallyus/node-red-contrib-h801/master/screenshot.png" target="_blank"><img src="https://raw.githubusercontent.com/originallyus/node-red-contrib-h801/master/screenshot.png"></a></p>
 
     <p>
         Developed by the super cool forks at <a href="http://originally.us" target="_blank"><b>Originally US</b></a>
@@ -121,18 +121,18 @@
         <dt>mac <span class="property-type">string | AA:BB:CC:DD:EE:FF</span></dt>
         <dd> MAC Address of your H801 Controller.</dd>
         <dt>r <span class="property-type">int | 0-255</span></dt>
-        <dd> red value</dd>
+        <dd> Red value</dd>
         <dt>g <span class="property-type">int | 0-255</span></dt>
-        <dd> greeb value</dd>
+        <dd> Green value</dd>
         <dt>b <span class="property-type">int | 0-255</span></dt>
-        <dd> blue value</dd>
+        <dd> Blue value</dd>
         <dt>w1 <span class="property-type">int | 0-255</span></dt>
         <dd> W1 value</dd>
         <dt>w2 <span class="property-type">int | 0-255</span></dt>
         <dd> W2 value</dd>
         <dt>broadcast <span class="property-type">string | 255.255.255.255</span></dt>
-        <dd> [Optional] broadcast address to be used</dd>
-        <dt>repeat <span class="property-type">string | 255.255.255.255</span></dt>
+        <dd> [Optional] You may change this parameter if you have advanced network configuration with VLAN or firewalls preventing the default broadcast address (255.255.255.255) to work. If you don't know what this is, most likely you don't need to set it.</dd>
+        <dt>repeat <span class="property-type">int | 1-20</span></dt>
         <dd> [Optional] Repeat this command multiple times to workaround UDP Broadcast traffic unreliableness.</dd>
     </dl>
 

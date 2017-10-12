@@ -79,13 +79,15 @@ module.exports = function(RED)
             repeat = msg.repeat;
         if (repeat < 1)
             repeat = 1;
+        if (repeat > 20)
+            repeat = 20;
 
         //Color parameters
         var red = 0;
         if (config.r)       red = config.r;
         if (msg.r)          red = msg.r;
         var green = 0;
-        if (config.g)       green = config.b;
+        if (config.g)       green = config.g;
         if (msg.g)          green = msg.g;
         var blue = 0;
         if (config.b)       blue = config.b;
@@ -124,8 +126,10 @@ module.exports = function(RED)
 
         //Clean up procedure before re-deploy
         thisNode.on('close', function(removed, done) {
-            if (client === null)
+            if (client === null) {
+                done();
                 return;
+            }
             client.close(function(){
                 done();
             });
