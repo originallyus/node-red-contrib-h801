@@ -121,7 +121,8 @@ module.exports = function(RED)
         var dgram = require('dgram');
         var client = dgram.createSocket('udp4');
         client.on('listening', function(){
-            client.setBroadcast(true);
+            if (client !== null && client !== undefined)
+                client.setBroadcast(true);
         });
 
         //Clean up procedure before re-deploy
