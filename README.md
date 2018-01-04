@@ -35,6 +35,3 @@ Please drop us an [email](mailto:hello@originally.us), or create an issue in our
 ##### How do I control my other (non-smart) devices at home with NodeRED?
 Check out [RMPlugin app](https://play.google.com/store/apps/details?id=us.originally.tasker&hl=en) developed by us. Here's an [intro video](https://www.youtube.com/watch?v=QUKYKhK57sc) for the hardware.
 
-<a target='_blank' rel='nofollow' href='https://app.codesponsor.io/link/675K2XU83RpTxWJP4HRjD8mC/originallyus/node-red-contrib-h801'>
-  <img alt='Sponsor' width='888' height='68' src='https://app.codesponsor.io/embed/675K2XU83RpTxWJP4HRjD8mC/originallyus/node-red-contrib-h801.svg' />
-</a>
